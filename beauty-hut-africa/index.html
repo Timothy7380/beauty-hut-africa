@@ -7,63 +7,71 @@
 <meta name="description" content="Africa's ultimate beauty destination. Six skincare edits stand in a line into the distance and every drag brings the next one to the front.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 :root{--u:min(calc(100vw/1600),calc(100vh/900));--ink:#1d1715;--mid:#7d7370;--dim:#b3a9a5;--red:#e1201f;--line:#efe6e2}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:#fff}
-body{font-family:Poppins,system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;overflow:hidden}
+body{font-family:Poppins,system-ui,sans-serif;font-weight:400;color:var(--ink);-webkit-font-smoothing:antialiased;overflow:hidden}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 ul{list-style:none}
 .wide{font-family:Poppins,sans-serif;text-transform:uppercase;font-weight:500}
 .page{height:100svh;min-height:520px;display:grid;grid-template-rows:auto auto 1fr;background:#fff}
-header{position:relative;z-index:5;background:#fff;padding:calc(20*var(--u)) calc(46*var(--u)) calc(15*var(--u))}
+header{position:relative;z-index:300;background:#fff;padding:calc(20*var(--u)) calc(46*var(--u)) calc(15*var(--u))}
 .r1{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
 .brand{font-size:calc(15.5*var(--u));letter-spacing:.2em;white-space:nowrap;display:flex;align-items:baseline;gap:.55em}
-.brand b{font-weight:600;color:var(--red)}
+.brand b{font-weight:700;color:var(--red)}
 .brand i{font-style:normal;font-weight:300;color:var(--mid);letter-spacing:.32em}
-.bar{display:flex;justify-content:center;gap:calc(34*var(--u));background:var(--ink);color:#f6ece8;font-size:calc(9*var(--u));letter-spacing:.2em;text-transform:uppercase;padding:calc(9*var(--u)) calc(16*var(--u))}
+.bar{font-weight:500;display:flex;justify-content:center;gap:calc(34*var(--u));background:var(--ink);color:#f6ece8;font-size:calc(9*var(--u));letter-spacing:.2em;text-transform:uppercase;padding:calc(9*var(--u)) calc(16*var(--u))}
 .bar em{font-style:normal;white-space:nowrap}.bar em+em:before{content:"✦";margin-right:calc(34*var(--u));color:var(--red)}
 .tabs{display:flex;gap:calc(48*var(--u));font-size:calc(14.5*var(--u));letter-spacing:.14em;color:var(--dim)}
-.tabs a{transition:color .25s;white-space:nowrap}
+.tabs a{transition:color .25s;white-space:nowrap;font-weight:500}
 .tabs a:hover,.tabs .on{color:var(--ink)}
+.tabs .on{font-weight:600}
 .acct{justify-self:end;display:flex;align-items:center;gap:calc(22*var(--u));font-size:calc(9.5*var(--u));letter-spacing:.12em}
+.acct button{display:flex;color:inherit}.acct a,.acct button{transition:color .2s}.acct a:hover,.acct button:hover{color:var(--red)}
+.saved{position:relative;display:flex}.saved sup{position:absolute;right:-.9em;top:-.7em;font-size:calc(8*var(--u));font-weight:600;color:var(--red)}
+.search{position:absolute;left:0;right:0;top:100%;background:#fff;border-top:1px solid var(--line);box-shadow:0 18px 30px -24px rgba(40,20,15,.35);padding:calc(18*var(--u)) calc(46*var(--u));display:none}
+.search.open{display:block}
+.search form{display:flex;align-items:center;gap:calc(16*var(--u));max-width:calc(720*var(--u));margin:0 auto;border-bottom:1px solid var(--ink)}
+.search input{flex:1;border:0;outline:0;background:none;font:300 calc(20*var(--u))/1.6 Poppins,sans-serif;color:var(--ink);padding:calc(8*var(--u)) 0}
+.search input::placeholder{color:var(--dim)}
+.search button{font-weight:600;font-size:calc(9.5*var(--u));letter-spacing:.2em;text-transform:uppercase}
 .acct svg{width:calc(17*var(--u));height:calc(17*var(--u));fill:none;stroke:currentColor;stroke-width:1.5}
 .r2{display:flex;justify-content:center;gap:calc(60*var(--u));margin-top:calc(17*var(--u));font-size:calc(9.5*var(--u));letter-spacing:.14em}
-.r2 a{transition:color .2s}.r2 a:hover{color:var(--red)}
+.r2 a{transition:color .2s;font-weight:400}.r2 a:hover{color:var(--red)}
 main{position:relative;display:grid;grid-template-columns:1fr calc(372*var(--u));min-height:0}
-.stage{position:relative;overflow:hidden;min-width:0;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:none;
+.stage{position:relative;overflow:hidden;min-width:0;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab;
   background:linear-gradient(transparent 60%,rgba(255,255,255,.72) 100%),linear-gradient(90deg,#f8f0ec 0%,#f2e5df 38%,#f7eeea 62%,#fbf7f5 100%)}
 .line{position:absolute;inset:0}
-.m{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform,filter;cursor:none}
+.m{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform,filter;cursor:pointer}
+.stage.dragging,.stage.dragging .m{cursor:grabbing}
 .m svg{display:block;position:relative;width:100%;height:100%}
 .m:before{content:"";position:absolute;left:8%;right:8%;bottom:-1.6%;height:3.6%;border-radius:50%;background:radial-gradient(closest-side,rgba(105,72,64,.26),transparent)}
 .intro{position:absolute;z-index:120;left:calc(46*var(--u));top:calc(32*var(--u));width:calc(390*var(--u));pointer-events:none}
-.eyebrow{display:flex;align-items:center;gap:.9em;font-size:calc(9.5*var(--u));letter-spacing:.26em;color:var(--red);margin-bottom:calc(14*var(--u))}
+.eyebrow{font-weight:600;display:flex;align-items:center;gap:.9em;font-size:calc(9.5*var(--u));letter-spacing:.26em;color:var(--red);margin-bottom:calc(14*var(--u))}
 .eyebrow:before{content:"";width:calc(28*var(--u));height:1px;background:currentColor}
-.intro h2{font-weight:500;font-size:calc(40*var(--u));line-height:1.04;letter-spacing:-.025em}
+.intro h2{font-weight:600;font-size:calc(40*var(--u));line-height:1.04;letter-spacing:-.025em}
 .intro h2 em{display:block;font-style:italic;font-weight:300;color:var(--mid)}
 .intro p{margin-top:calc(16*var(--u));max-width:calc(320*var(--u));text-shadow:0 0 14px #f8f0ec,0 0 4px #f8f0ec;font-size:calc(13.5*var(--u));font-weight:300;line-height:1.75;color:var(--mid)}
 .intro p strong{font-weight:500;color:var(--ink)}
 .tag{position:absolute;z-index:2;left:calc(46*var(--u));bottom:calc(44*var(--u))}
 .look{display:flex;align-items:flex-end;font-size:calc(29*var(--u));line-height:calc(38*var(--u));letter-spacing:.14em;gap:.5em;pointer-events:none}
+.look>span:first-child{font-weight:300}
 .look .of{font-size:calc(11*var(--u));line-height:calc(22*var(--u));letter-spacing:.2em;color:var(--dim);font-weight:400}
 .twin{height:calc(30*var(--u));overflow:hidden;margin-top:calc(4*var(--u));pointer-events:none}
 .troll{display:block;will-change:transform}
 .troll b{display:block;height:calc(30*var(--u));line-height:calc(30*var(--u));font-size:calc(21*var(--u));font-style:italic;font-weight:300;color:var(--mid);letter-spacing:-.01em}
 .win{height:calc(38*var(--u));overflow:hidden}
 .roll{display:block;will-change:transform}
-.roll b{display:block;font-weight:500;height:calc(38*var(--u))}
-.shop{display:inline-flex;gap:.8em;margin-top:calc(16*var(--u));font-size:calc(9.5*var(--u));letter-spacing:.14em;padding-bottom:calc(4*var(--u));border-bottom:1px solid currentColor;transition:color .2s}
+.roll b{display:block;font-weight:600;height:calc(38*var(--u))}
+.shop{font-weight:600;display:inline-flex;gap:.8em;margin-top:calc(16*var(--u));font-size:calc(9.5*var(--u));letter-spacing:.14em;padding-bottom:calc(4*var(--u));border-bottom:1px solid currentColor;transition:color .2s}
 .shop:hover{color:var(--red)}
 .shop i{font-style:normal;transition:transform .25s}.shop:hover i{transform:translateX(4px)}
 .hint{position:absolute;z-index:2;right:calc(40*var(--u));bottom:calc(48*var(--u));display:flex;align-items:center;gap:1em;font-size:calc(9*var(--u));letter-spacing:.24em;color:var(--mid);pointer-events:none;transition:opacity .6s}
 .hint:before,.hint:after{content:"";width:calc(26*var(--u));height:1px;background:currentColor;opacity:.5}
 .hint.gone{opacity:0}
-.ring{position:absolute;z-index:4;left:0;top:0;width:calc(46*var(--u));height:calc(46*var(--u));margin:calc(-23*var(--u)) 0 0 calc(-23*var(--u));border:calc(2.5*var(--u)) solid var(--ink);border-radius:99px;pointer-events:none;opacity:0;transition:width .22s cubic-bezier(.2,.8,.2,1),height .22s cubic-bezier(.2,.8,.2,1),margin .22s cubic-bezier(.2,.8,.2,1),opacity .2s}
-.ring.show{opacity:1}
-.ring.drag{width:calc(84*var(--u));height:calc(34*var(--u));margin:calc(-17*var(--u)) 0 0 calc(-42*var(--u))}
 .rail{position:relative;overflow:hidden;background:#f8f3f1;min-height:0}
 .card{position:absolute;left:0;top:0;width:100%;display:flex;flex-direction:column;padding:calc(18*var(--u)) calc(24*var(--u)) calc(18*var(--u));will-change:transform;background:#f8f3f1}
 .card.alt{background:#fff}
@@ -74,9 +82,10 @@ main{position:relative;display:grid;grid-template-columns:1fr calc(372*var(--u))
 .shot svg{display:block;width:100%;height:100%}
 .meta{display:grid;grid-template-columns:1fr auto;align-items:end;margin-top:calc(8*var(--u))}
 .meta small{display:block;font-size:calc(8.5*var(--u));font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--red)}
+.meta h3 a{transition:color .2s}.meta h3 a:hover{color:var(--red)}
 .meta h3{font-weight:400;font-size:calc(13.5*var(--u));letter-spacing:-.005em;line-height:1.35;margin-top:calc(4*var(--u))}
 .meta span{display:block;margin-top:calc(5*var(--u));font-size:calc(12.5*var(--u));font-weight:500;letter-spacing:.02em}
-.add{width:calc(26*var(--u));height:calc(26*var(--u));position:relative;transition:transform .2s}
+.add{display:block;flex:none;width:calc(26*var(--u));height:calc(26*var(--u));position:relative;transition:transform .2s}
 .add:before,.add:after{content:"";position:absolute;left:50%;top:50%;width:calc(15*var(--u));height:1.5px;margin:-.75px 0 0 calc(-7.5*var(--u));background:var(--ink)}
 .add:after{transform:rotate(90deg)}
 .add:hover{transform:rotate(90deg)}
@@ -91,7 +100,6 @@ button:focus-visible,a:focus-visible,.stage:focus-visible{outline:2px solid var(
   .tabs,.r2,.acct>a:not(:last-child){display:none}
   .brand{font-size:14px}
   main{grid-template-columns:1fr;grid-template-rows:1fr 190px}
-  .stage{cursor:auto}.m{cursor:auto}.ring{display:none}
   .intro{left:16px;top:18px;width:calc(100% - 32px)}
   .intro h2{font-size:28px}
   .intro p{display:none}
@@ -112,17 +120,18 @@ button:focus-visible,a:focus-visible,.stage:focus-visible{outline:2px solid var(
   <div class="bar"><em>Same-day delivery across Lagos</em><em>Free delivery on orders over ₦75,000</em><em>Visit us in Lagos &amp; Abuja</em></div>
   <header>
     <div class="r1">
-      <a class="brand wide" href="#" aria-label="Beauty Hut Africa"><b>Beauty Hut</b><i>Africa</i></a>
-      <nav class="tabs wide" aria-label="Sections"><a class="on" href="#" aria-current="page">The Edit</a><a href="#">Shop</a><a href="#">Brands</a><a href="#">The Hut Blog</a></nav>
+      <a class="brand wide" href="./" aria-label="Beauty Hut Africa"><b>Beauty Hut</b><i>Africa</i></a>
+      <nav class="tabs wide" aria-label="Sections"><a class="on" href="./" aria-current="page">The Edit</a><a href="https://beautyhutafrica.com/shop/">Shop</a><a href="https://beautyhutafrica.com/brands/">Brands</a><a href="https://beautyhutafrica.com/blog/">The Hut Blog</a></nav>
       <div class="acct wide">
-        <a href="#">Login</a>
-        <a href="#" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg></a>
-        <a href="#" aria-label="Saved"><svg viewBox="0 0 24 24"><path d="M12 20S3.5 15 3.5 9A4.6 4.6 0 0 1 12 6.6 4.6 4.6 0 0 1 20.5 9C20.5 15 12 20 12 20Z"/></svg></a>
-        <a href="#" aria-label="Bag"><svg viewBox="0 0 24 24"><path d="M5 8h14l1 13H4Z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg></a>
-        <a href="#">Cart (<span id="cart">0</span>)</a>
+        <a href="https://beautyhutafrica.com/my-account/">Login</a>
+        <button type="button" id="sbtn" aria-label="Search" aria-expanded="false"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg></button>
+        <a href="https://beautyhutafrica.com/my-account/" aria-label="Saved items" class="saved"><svg viewBox="0 0 24 24"><path d="M12 20S3.5 15 3.5 9A4.6 4.6 0 0 1 12 6.6 4.6 4.6 0 0 1 20.5 9C20.5 15 12 20 12 20Z"/></svg><sup id="savedN"></sup></a>
+        <a href="https://beautyhutafrica.com/cart/" aria-label="Bag"><svg viewBox="0 0 24 24"><path d="M5 8h14l1 13H4Z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg></a>
+        <a href="https://beautyhutafrica.com/cart/">Bag</a>
       </div>
     </div>
-    <nav class="r2 wide" aria-label="Departments"><a href="#">Skincare</a><a href="#">Makeup</a><a href="#">Hair &amp; Haircare</a><a href="#">Fragrance</a><a href="#">Personal Care</a><a href="#">Deals</a><a href="#">Gift Cards</a></nav>
+    <div class="search" id="search"><form action="https://beautyhutafrica.com/" method="get" role="search"><input type="hidden" name="post_type" value="product"><input id="q" name="s" type="search" placeholder="Search serums, sunscreen, brands…" aria-label="Search products"><button type="submit">Search</button></form></div>
+    <nav class="r2 wide" aria-label="Departments"><a href="https://beautyhutafrica.com/skincare/">Skincare</a><a href="https://beautyhutafrica.com/makeup/">Makeup</a><a href="https://beautyhutafrica.com/hair-haircare/">Hair &amp; Haircare</a><a href="https://beautyhutafrica.com/fragrance/">Fragrance</a><a href="https://beautyhutafrica.com/feminine-personal-care/">Personal Care</a><a href="https://beautyhutafrica.com/discounts/">Deals</a><a href="https://beautyhutafrica.com/product/gift-card-2/">Gift Cards</a></nav>
   </header>
   <main>
     <section class="stage" id="stage" aria-label="Skincare edits. Drag, scroll or use the arrow keys to change edit." tabindex="0">
@@ -135,10 +144,9 @@ button:focus-visible,a:focus-visible,.stage:focus-visible{outline:2px solid var(
       <div class="tag">
         <div class="look wide"><span>Edit</span><span class="win"><span class="roll" id="roll"></span></span><span class="of">/ 06</span></div>
         <div class="twin" aria-live="polite"><span class="troll" id="troll"></span></div>
-        <a class="shop wide" href="#">Shop the edit <i>→</i></a>
+        <a class="shop wide" id="shopLink" href="#">Shop the edit <i>→</i></a>
       </div>
       <div class="hint wide" id="hint">Drag to explore</div>
-      <div class="ring" id="ring"></div>
     </section>
     <aside class="rail" id="rail" aria-label="Products in this edit"></aside>
   </main>
@@ -155,18 +163,18 @@ const NAMES=['Arami Glow Oil','CosRx Snail 96 Mucin Power Essence','Uncover Lico
 // each product's box on the rail sheet: x0, x1, y0, y1, name, price
 const BOX=[[125, 295, 20, 400], [464, 795, 20, 400], [999, 1100, 20, 400], [1280, 1660, 85, 334], [165, 254, 440, 820], [552, 707, 440, 820], [997, 1103, 440, 820], [1340, 1600, 440, 820], [118, 301, 860, 1240], [530, 729, 860, 1240], [967, 1132, 860, 1240], [1370, 1570, 860, 1240]];
 const ITEMS=[
-  ['Arami','Glow Oil, Vanilla Spice','₦8,600'],['Arami','Ivory Butter','₦15,600'],
-  ['CosRx','Advanced Snail 96 Mucin Power Essence','₦20,834'],['CosRx','Advanced Snail 92 All in One Cream','₦17,500'],
-  ['Uncover','Licorice Root Dark Spot Serum','₦25,000'],['Uncover','Aloe Invisible Sunscreen','₦16,065'],
-  ['Topicals','Slick Salve Lip Balm','₦26,400'],['Topicals','Faded Eye Masks, 6 Pairs','₦36,300'],
-  ['EOS','Vanilla Cashmere Body Lotion','₦23,100'],['EOS','Vanilla Cashmere Body Wash','₦21,700'],
-  ['CeraVe','Foaming Cleanser with Niacinamide','₦14,700'],['CosRx','Salicylic Acid Daily Gentle Cleanser','₦9,550']].map((n,i)=>[...BOX[i],...n]);
+  ['Arami','Glow Oil, Vanilla Spice','arami-glow-oil',11857,'₦8,600'],['Arami','Ivory Butter','arami-ivory-butter',13691,'₦15,600'],
+  ['CosRx','Advanced Snail 96 Mucin Power Essence','cosrx-advanced-snail-96-mucin-power-essence',10661,'₦20,834'],['CosRx','Advanced Snail 92 All in One Cream','cosrx-advanced-snail-92-all-in-one-cream',10647,'₦17,500'],
+  ['Uncover','Licorice Root Dark Spot Serum','uncover-licorice-root-dark-spot-serum',11299,'₦25,000'],['Uncover','Aloe Invisible Sunscreen','uncover-aloe-invisible-sunscreen',15162,'₦16,065'],
+  ['Topicals','Slick Salve Lip Balm','topicals-slick-salve-lip-balm',11842,'₦26,400'],['Topicals','Faded Eye Masks, 6 Pairs','topicals-faded-eye-masks-set-of-6-pairs',11215,'₦36,300'],
+  ['EOS','Vanilla Cashmere Body Lotion','eos-vanilla-cashmere-body-lotion',11578,'₦23,100'],['EOS','Vanilla Cashmere Body Wash','eos-shea-better-vanilla-cashmere-body-wash-473ml',26589,'₦21,700'],
+  ['CeraVe','Foaming Cleanser with Niacinamide','cerave-foaming-cleanser',11866,'₦14,700'],['CosRx','Salicylic Acid Daily Gentle Cleanser','cosrx-salicylic-acid-daily-gentle-cleanser',10663,'₦9,550']].map((n,i)=>[...BOX[i],...n]);
 const TITLES=['The Glow Ritual','Snail Recovery','Even Tone','Lip &amp; Eye Reset','Body, Softened','Clean Slate'];
 // depth stops from d = -1 (leaving past the rail) to d = 5 (arriving out of the haze)
 const KX=[1.2,.744,.496,.346,.235,.15,.085],KF=[1.14,.89,.777,.704,.651,.616,.59],KH=[1.18,.832,.574,.436,.334,.258,.19],
       KB=[0,0,1.5,4,8,12,17],KO=[1,1,1,1,.86,.5,0];
 const N=LOOKS.length,$=id=>document.getElementById(id),calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
-const stage=$('stage'),rail=$('rail'),ring=$('ring'),roll=$('roll'),line=$('line');
+const stage=$('stage'),rail=$('rail'),roll=$('roll'),line=$('line');
 const NS='http://www.w3.org/2000/svg',wrap=(x,n)=>((x%n)+n)%n,clamp=(x,a,b)=>Math.min(b,Math.max(a,x));
 function crop(href,x0,y0,w,h,sheetW,sheetH){
   const s=document.createElementNS(NS,'svg');s.setAttribute('viewBox',`${x0} ${y0} ${w} ${h}`);s.setAttribute('aria-hidden','true');
@@ -177,20 +185,27 @@ const people=LOOKS.map(([a,b],i)=>{
   const e=document.createElement('div');e.className='m';e.dataset.i=i;e.title=NAMES[i];e.append(crop(MODELS,a,Y0,b-a,Y1-Y0,MW,MH));line.append(e);
   return{e,r:(b-a)/(Y1-Y0),f:'',o:''};
 });
-const cards=ITEMS.map(([a,b,c,d,brand,name,price],i)=>{
+const STORE='https://beautyhutafrica.com';
+const cards=ITEMS.map(([a,b,c,d,brand,name,slug,id,price],i)=>{
+  const url=`${STORE}/product/${slug}/`;
   const e=document.createElement('article');e.className='card'+(i%2?' alt':'');
-  e.innerHTML=`<button class="fav" aria-pressed="false" aria-label="Save ${brand} ${name}"><svg viewBox="0 0 24 24"><path d="M12 20S3.5 15 3.5 9A4.6 4.6 0 0 1 12 6.6 4.6 4.6 0 0 1 20.5 9C20.5 15 12 20 12 20Z"/></svg></button><span class="shot"></span><div class="meta"><div><small>${brand}</small><h3>${name}</h3><span>${price}</span></div><button class="add" aria-label="Add ${brand} ${name} to bag"></button></div>`;
+  e.innerHTML=`<button class="fav" aria-pressed="false" aria-label="Save ${brand} ${name}"><svg viewBox="0 0 24 24"><path d="M12 20S3.5 15 3.5 9A4.6 4.6 0 0 1 12 6.6 4.6 4.6 0 0 1 20.5 9C20.5 15 12 20 12 20Z"/></svg></button><a class="shot" href="${url}" aria-label="View ${brand} ${name}"></a><div class="meta"><div><small>${brand}</small><h3><a href="${url}">${name}</a></h3><span>${price}</span></div><a class="add" href="${STORE}/cart/?add-to-cart=${id}" aria-label="Add ${brand} ${name} to bag" title="Add to bag"></a></div>`;
   e.querySelector('.shot').append(crop(PIECES,a,c,b-a,d-c,PW,PH));rail.append(e);return e;
 });
 const troll=$('troll');
 for(let i=0;i<=N;i++){const b=document.createElement('b');b.textContent=String(i%N+1).padStart(2,'0');roll.append(b);
   const t=document.createElement('b');t.innerHTML=TITLES[i%N];troll.append(t)}
 let hinted=false;const unhint=()=>{if(!hinted){hinted=true;$('hint').classList.add('gone')}};
-let cart=0;
 rail.addEventListener('click',e=>{
-  const f=e.target.closest('.fav');if(f)f.setAttribute('aria-pressed',f.getAttribute('aria-pressed')!=='true');
-  if(e.target.closest('.add'))$('cart').textContent=++cart;
+  const f=e.target.closest('.fav');if(!f)return;
+  f.setAttribute('aria-pressed',f.getAttribute('aria-pressed')!=='true');
+  const n=rail.querySelectorAll('.fav[aria-pressed=true]').length;$('savedN').textContent=n||'';
 });
+const sbtn=$('sbtn'),sp=$('search');
+sbtn.addEventListener('click',()=>{const o=sp.classList.toggle('open');sbtn.setAttribute('aria-expanded',o);if(o)$('q').focus()});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&sp.classList.contains('open')){sp.classList.remove('open');sbtn.setAttribute('aria-expanded',false);sbtn.focus()}});
+// the edit's hero product: first rail piece of each edit
+const heroURL=i=>`${STORE}/product/${ITEMS[i*2][6]}/`;let shown=-1;
 
 let W=0,H=0,base=0,cardS=0,side=false,dirty=true,p=0,target=0,last=0;
 function size(){
@@ -221,35 +236,31 @@ function paint(){
   roll.style.transform=`translate3d(0,${(-wrap(p,N)*roll.firstChild.offsetHeight).toFixed(1)}px,0)`;
   troll.style.transform=`translate3d(0,${(-wrap(p,N)*troll.firstChild.offsetHeight).toFixed(1)}px,0)`;
   if(p!==0)unhint();
+  const cur=wrap(Math.round(p),N);if(cur!==shown){shown=cur;$('shopLink').href=heroURL(cur);$('shopLink').setAttribute('aria-label',`Shop edit ${cur+1}: ${NAMES[cur]}`)}
 }
 
-let mx=0,my=0,cx=0,cy=0,down=false,sx=0,st=0,moved=0,wheelT=0;
+let down=false,sx=0,st=0,moved=0,wheelT=0;
 function frame(now){
   const dt=Math.min(50,now-last)||16;last=now;
   const was=p;
   if(calm)p=target;else p+=(target-p)*(1-Math.exp(-dt*.0072));
   if(Math.abs(target-p)<.0004)p=target;
   if(p!==was||dirty){dirty=false;paint()}
-  cx+=(mx-cx)*.32;cy+=(my-cy)*.32;
-  ring.style.transform=`translate3d(${cx.toFixed(1)}px,${cy.toFixed(1)}px,0)`;
 }
 const PULL=()=>Math.max(150,W*.2);
-stage.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')ring.classList.add('show')});
-stage.addEventListener('pointerleave',()=>ring.classList.remove('show'));
 stage.addEventListener('pointermove',e=>{
-  const r=stage.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;
   if(!down)return;
   const dx=e.clientX-sx;moved=Math.max(moved,Math.abs(dx));target=st+dx/PULL();
 });
 stage.addEventListener('pointerdown',e=>{
   if(e.target.closest('a'))return;
-  down=true;sx=e.clientX;st=target;moved=0;stage.setPointerCapture(e.pointerId);ring.classList.add('drag');
+  down=true;sx=e.clientX;st=target;moved=0;stage.setPointerCapture(e.pointerId);stage.classList.add('dragging');
 });
 function release(e){
-  if(!down)return;down=false;ring.classList.remove('drag');
+  if(!down)return;down=false;stage.classList.remove('dragging');
   if(moved<6){
     const hit=document.elementsFromPoint(e.clientX,e.clientY).find(x=>x.classList&&x.classList.contains('m'));
-    if(hit){let d=wrap(+hit.dataset.i-target,N);d=Math.round(d);if(d>0&&d<N)target=Math.round(target)+d}
+    if(hit){let d=wrap(+hit.dataset.i-target,N);d=Math.round(d);if(d>0&&d<N)target=Math.round(target)+d;else if(d%N===0&&p===target)location.href=heroURL(+hit.dataset.i)}
   }else target=Math.round(target);
 }
 stage.addEventListener('pointerup',release);stage.addEventListener('pointercancel',release);
@@ -258,6 +269,7 @@ stage.addEventListener('wheel',e=>{
   clearTimeout(wheelT);wheelT=setTimeout(()=>{target=Math.round(target)},150);
 },{passive:false});
 addEventListener('keydown',e=>{
+  if(e.target.closest&&e.target.closest('input,textarea'))return;
   if(['ArrowRight','ArrowDown'].includes(e.key)){e.preventDefault();target=Math.round(target)+1}
   if(['ArrowLeft','ArrowUp'].includes(e.key)){e.preventDefault();target=Math.round(target)-1}
 });
